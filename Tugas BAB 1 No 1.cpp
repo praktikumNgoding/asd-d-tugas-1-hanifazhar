@@ -40,10 +40,10 @@ int main(){
 		cout<<endl<<"Polinom kedua";
 		hitung(p2,i2);
 		cout<<endl<<endl<<"Menu :"<<endl;
-		cout<<"1. Penjumlahan"<<endl;
-		cout<<"2. Pengurangan"<<endl;
-		cout<<"3. Perkalian"<<endl;
-		cout<<"4. Turunan"<<endl;
+		cout<<"1. Penjumlahan (P1+P2)"<<endl;
+		cout<<"2. Pengurangan (P1-P2)"<<endl;
+		cout<<"3. Perkalian (P1*P2)"<<endl;
+		cout<<"4. Turunan P1 dan P2"<<endl;
 		cout<<"5. Keluar"<<endl;
 		cout<<"Masukkan pilihan Anda : ";
 		cin>>pil;
@@ -94,67 +94,51 @@ void hitung(int hs[], int x){
 }
 
 void jumlah(int p1[], int p2[], int x, int z) {
-	int k,l;
+	int n;
 	if(x<=z){
-		l=z;
+		n=z;
 	}
 	else{
-		l=x;
+		n=x;
 	}
-	if(l==x)
-	{
-		for(k=z+1;k<=l;k++){
-			p2[k]=0;
+	if(n==x){
+		for(i=z+1;i<=n;i++){
+			p2[i]=0;
 		}
 	}
-	else if(l==z){
-		for(k=x+1;k<=l;k++){
-			p1[k]=0;
+	else if(n==z){
+		for(i=x+1;i<=n;i++){
+			p1[i]=0;
 		}
 	}
-	for(i=0;i<=l;i++){
+	for(i=0;i<=n;i++){
 		p1[i]=p1[i]+p2[i];
 	}
-	for(i=0;i<=l;i++){
-		if(i!=l){
-			cout<<p1[i]<<"x^"<<i<<" + ";
-		}
-		else{
-			cout<<p1[i]<<"x^"<<i;
-		}
-	}
+	hitung(p1,n);
 }
 
 void kurang(int p1[], int p2[], int x, int z){
-	int k,l;
+	int n;
 	if(x<=z){
-		l=z;
+		n=z;
 	}
 	else{
-		l=x;
+		n=x;
 	}
-	if(l==x)
-	{
-		for(k=z+1;k<=l;k++){
-			p2[k]=0;
+	if(n==x){
+		for(i=z+1;i<=n;i++){
+			p2[i]=0;
 		}
 	}
-	else if(l==z){
-		for(k=x+1;k<=l;k++){
-			p1[k]=0;
+	else if(n==z){
+		for(i=x+1;i<=n;i++){
+			p1[i]=0;
 		}
 	}
-	for(i=0;i<=l;i++){
+	for(i=0;i<=n;i++){
 		p1[i]=p1[i]-p2[i];
 	}
-	for(i=0;i<=l;i++){
-		if(i!=l){
-			cout<<p1[i]<<"x^"<<i<<" + ";
-		}
-		else{
-			cout<<p1[i]<<"x^"<<i;
-		}
-	}
+	hitung(p1,n);
 }
 
 void kali(int p1[], int p2[], int x, int z){
